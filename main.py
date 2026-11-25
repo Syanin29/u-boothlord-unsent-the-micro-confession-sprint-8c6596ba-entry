@@ -48,6 +48,7 @@ def main() -> int:
         print(f"message line is {len(lines[1])} characters, max "
               f"{MAX_MESSAGE_CHARS}", file=sys.stderr)
         return 1
+    assert lines[1], "message line must not be empty"
     text.encode("utf-8")  # raises if not valid UTF-8; it always is
 
     out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
